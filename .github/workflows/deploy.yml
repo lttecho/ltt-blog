@@ -12,9 +12,8 @@ jobs:
       - name: Ready to build  and deploy 🤓
         uses: fifsky/dingtalk-action@master
         with:
-          url: ${{ secrets.DINGTALK_WEBHOOK }}
           type: text
-          content: Github：Node-Guidebook 构建开始
+          content: Github：Blog 构建开始
       - name: Checkout 🛎️
         uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
         with:
@@ -35,4 +34,4 @@ jobs:
         with:
           url: ${{ secrets.DINGTALK_WEBHOOK }}
           type: text
-          content: Github：Node-Guidebook 构建完成
+          content: Github：Blog 构建完成
