@@ -92,47 +92,99 @@ order: 3
 
 ## 源代码面板的快捷键
 
-
-
-
-
-
+| 动作                                                         | MAC                                                          | Windows / Linux                                              |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 暂停脚本执行（如果当前正在运行）或恢复（如果当前已暂停）     | F8 or Command+\                                              | F8 or Control+\                                              |
+| 跳过下一个函数调用                                           | F10 or Command+'                                             | F10 or Control+'                                             |
+| 进入下一个函数调用                                           | F11 or Command+;                                             | F11 or Control+;                                             |
+| 跳出当前函数                                                 | Shift+F11 or Command+Shift+;                                 | Shift+F11 or Control+Shift+;                                 |
+| 暂停时继续执行某一行代码                                     | 按住 Command 然后单击代码行                                  | 按住 Control 然后单击代码行                                  |
+| 选择当前所选帧下方/上方的调用帧                              | Control+. / Control+,                                        | Control+. / Control+,                                        |
+| 将更改保存到本地修改                                         | Command+S                                                    | Control+S                                                    |
+| 保存所有更改                                                 | Command+Option+S                                             | Control+Alt+S                                                |
+| 跳转到某一行                                                 | Control+G                                                    | Control+G                                                    |
+| 跳转到当前打开文件的某一行                                   | 按 Command+O 打开命令菜单，键入 : 后跟行号，然后按 Enter     | 按 Control+O 打开命令菜单，在行号后键入 :，然后按 Enter      |
+| 跳转到当前打开文件的某一列（例如第5行，第9列）               | 按 Command+O 打开命令菜单，键入 :，然后是行号，然后是另一个 :，然后是列号，然后按 Enter | 按 Control+O 打开命令菜单，键入 :，然后是行号，然后是另一个 :，然后是列号，然后按 Enter |
+| 跳转到一个函数声明（如果当前打开的文件是HTML或脚本），或一个规则集（如果当前打开的文件是样式表） | 按 Command+Shift+O，然后键入声明/规则集的名称，或从选项列表中选择它 | 按 Control+Shift+O，然后键入声明/规则集的名称，或从选项列表中选择它 |
+| 关闭当前活动选项卡                                           | Option+W                                                     | Alt+W                                                        |
+| 打开下一个或上一个选项卡                                     | Function+Command+Up or Down                                  | Control+Page Up or Page Down                                 |
+| 切换左侧导航栏                                               | Command+Shift+Y                                              | Control+Shift+Y                                              |
+| 切换右侧的调试器侧边栏                                       | Command+Shift+H                                              | Control+Shift+H                                              |
 
 ### 代码编辑器的快捷键
 
-
+| 动作                                                         | MAC                                | Windows / Linux                    |
+| ------------------------------------------------------------ | ---------------------------------- | ---------------------------------- |
+| 删除最后一个单词中的所有字符，直到光标                       | Option+Delete                      | Control+Delete                     |
+| 添加或删除代码行断点                                         | 将光标放在该行上，然后按 Command+B | 将光标放在该行上，然后按 Control+B |
+| 转到匹配的括号                                               | Control+M                          | Control+M                          |
+| 切换单行注释。如果选择多行，DevTools 会在每行的开头添加注释  | Command+/                          | Control+/                          |
+| 选择/取消选择光标所在的任何单词的下一个匹配项。每个事件同时突出显示 | Command+D / Command+U              | Control+D / Control+U              |
 
 
 
 ## 网络面板的快捷键
 
+| 动作                   | MAC       | Windows / Linux |
+| ---------------------- | --------- | --------------- |
+| 开始 / 停止录制        | Command+E | Control+E       |
+| 记录一次重载           | Command+R | Control+R       |
+| 重新执行选定的XHR请求  | R         | R               |
+| 隐藏所选请求的详细信息 | Escape    | Escape          |
+
 
 
 ## 性能面板的快捷键
+
+| 动作            | MAC       | Windows / Linux |
+| --------------- | --------- | --------------- |
+| 开始 / 停止录制 | Command+E | Control+E       |
+| 保存录制        | Command+S | Control+S       |
+| 载入录制        | Command+O | Control+O       |
 
 
 
 ## 内存面板的快捷键
 
+| 动作            | MAC       | Windows / Linux |
+| --------------- | --------- | --------------- |
+| 开始 / 停止录制 | Command+E | Control+E       |
+
 
 
 ## 控制台面板的快捷键
 
-
+| 动作                                                         | MAC                        | Windows / Linux            |
+| ------------------------------------------------------------ | -------------------------- | -------------------------- |
+| 接收自动完成建议                                             | Right Arrow or Tab         | Right Arrow or Tab         |
+| 拒绝自动完成建议                                             | Escape                     | Escape                     |
+| 自动完成建议列表向上或向下翻页                               | Up / Down or Control+P / N | Up / Down or Control+P / N |
+| 获取前一条语句                                               | 向上箭头                   | 向上箭头                   |
+| 获取下一条语句                                               | 向下箭头                   | 向下箭头                   |
+| 聚焦到控制台                                                 | Control+`                  | Control+`                  |
+| 清空控制台                                                   | Command+K or Option+L      | Control+L                  |
+| 强制多行输入。请注意，DevTools 应该默认检测多行场景，因此现在通常不需要此快捷方式 | Shift+Return               | Shift+Enter                |
+| 执行                                                         | Return                     | Enter                      |
+| 展开已记录到控制台的对象的所有子属性                         | 按住 Alt 然后单击展开 >    | 按住 Alt 然后单击展开 >    |
 
 
 
 ## 查找页的快捷键
 
-
+| 动作                  | MAC                   | Windows / Linux      |
+| --------------------- | --------------------- | -------------------- |
+| 展开/折叠所有搜索结果 | Command+Option+{ or } | Control+Shift+{ or } |
 
 
 
 ## 记录器面板的快捷键
 
-
-
-
+| 动作                 | MAC           | Windows / Linux |
+| -------------------- | ------------- | --------------- |
+| 开始 / 停止录制      | Command+E     | Control+E       |
+| 载入录制             | Command+Enter | Control+Enter   |
+| 复制录制或选定的步骤 | Command+C     | Control+C       |
+| 切换代码视图         | Command+B     | Control+B       |
 
 
 
