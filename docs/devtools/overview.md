@@ -11,39 +11,35 @@ order: 1
 
 <h1>概览</h1>
 
-Chrome DevTools是直接内置在[Google Chrome](https://www.google.com/chrome/)浏览器中的一组Web开发者工具。DevTools可以帮助你即时编辑页面并快速诊断问题，最终帮助你更快地构建更好的网站。
-
+Chrome DevTools是直接内置在[Google Chrome](https://www.google.com/chrome/)浏览器中的一组Web开发者工具。DevTools可以帮助你实时编辑页面并快速诊断问题，以便于更快地构建更好的网站。
 
 
 <iframe width="700" height="394" src="https://www.youtube.com/embed/VYyQv0CSZOE" title="Build better sites faster with Chrome DevTools" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-请观看视频以了解核心DevTools工作流程的实时演示，包括调试CSS、原型设计CSS、调试JavaScript和分析加载性能。
-
+请观看视频来了解核心DevTools工作流程的现场演示，包括调试CSS、原型设计CSS、调试JavaScript和分析加载性能。
 
 
 ## 打开DevTools
 
 打开DevTools有许多方法，因为不同的用户希望快速访问DevTools UI的不同部分。
 
-- 当您想要使用DOM或CSS工作时，请右键单击页面上的元素并选择**检查**，以进入**元素**面板。或按Command+Option+C（Mac）或Control+Shift+C（Windows，Linux，ChromeOS）。 
+- 当您想要使用DOM或CSS工作时，请右键单击页面上的元素并选择**检查**，以进入**元素**面板。或者使用快捷键：按Command+Option+C（Mac）或Control+Shift+C（Windows，Linux，ChromeOS）。 
 
 - 当您想要查看日志消息或运行JavaScript时，请按Command+Option+J（Mac）或Control+Shift+J（Windows，Linux，ChromeOS）直接进入**控制台**面板。
 
-有关更多详细信息和工作流，请参见[打开Chrome DevTools](https://lttecho.github.io/ltt-blog/devtools/overview/open-chrome-devtools)。
-
+有关更多详细信息和工作流，请参见[打开Chrome DevTools](/devtools/open-chrome-devtools)。
 
 
 ## 快速开始
 
-如果您是一位经验更丰富的Web开发者，以下是学习如何使用DevTools提高生产力的推荐起点：
+如果您是一位经验更丰富的Web开发者，可以从以下几个着手点来学习如何使用DevTools提高生产力：
 
-- 查看和更改DOM 
-- 查看和更改页面的样式（CSS） 
-- 调试JavaScript
--  在控制台中查看消息并运行JavaScript 
-- 优化网站速度 
-- 检查网络活动
-
+- [查看和更改DOM](/devtools/start-with-view-and-change-dom)
+- [查看和更改页面的样式（CSS）](/devtools/view-and-change-css)
+- [调试JavaScript](/devtools/debug-javascript)
+- [在控制台中查看消息并运行JavaScript](/devtools/console-overview)
+- [优化网站速度](/devtools/console-overview)
+- [检查网络活动](/devtools/inspect-network-activity)
 
 
 ## Discover DevTools
