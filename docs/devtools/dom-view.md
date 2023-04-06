@@ -123,13 +123,97 @@ DevTools的元素面板就会被打开。`<li>Michelangelo</li>` 就会在DOM树
 
 ![img](https://wd.imgix.net/image/BrQidfK9jaQyIHwdw91aVpkPiib2/qigo04bdlo2evHazfIAp.png?auto=format&w=845)
 
+如上所述，搜索栏还支持 CSS 和 XPath 选择器。
+
+**元素**面板选择 DOM 树中的第一个匹配结果并将其滚动到视口中的视图中。默认情况下，这会在您键入时发生。如果您总是使用长搜索查询，则可以让 DevTools 仅在您按 Enter 时运行搜索。
+
+避免节点之间不必要的跳转，可以在**设置** > **首选项** > **全局** > **即输即搜**中去掉勾选。
+
+![img](https://wd.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/BKcshLBj0EI1OahoEXbS.png?auto=format&w=845)
+
+
+
+## 编辑DOM
+
+您可以即时编辑 DOM 并查看这些更改如何影响页面。
+
+### 编辑内容
+
+要编辑节点的内容，请双击 DOM 树中的内容。
+
+`1` 右键点击下面的**Michelle**并选择**检查**。
+
+- Fry
+- Michelle
+
+`2` 在DOM树中，双击`Michelle`。也就是，双击`<li>`和`</li>`标签之间的文本。文本以蓝色突出显示，表示它已被选中。
+
+![img](https://wd.imgix.net/image/BrQidfK9jaQyIHwdw91aVpkPiib2/6izVzx17nim6eDn96Vhd.png?auto=format&w=845)
+
+`3` 删除`Michelle`，输入`Leela`，然后回车以确定修改。文本内容就会从**Michelle**修改为**Leela**。
+
+### 编辑属性
+
+要编辑属性，请双击属性名称或值。按照以下说明了解如何向节点添加属性。
+
+`1` 右键点击下面的**Howard**选择**检查**。
+
+- Howard
+- Vince
+
+`2` 双击`<li>`标签，li文本会高亮以表示该节点被选中。
+
+![img](https://wd.imgix.net/image/BrQidfK9jaQyIHwdw91aVpkPiib2/U5cgUXHsZ3H9vnL9TmQ0.png?auto=format&w=845)
+
+`3` 按向右箭头键，添加一个空格，输入`style="background-color:gold"`，然后回车。该节点的背景颜色就会变为金色。
+
+![img](https://wd.imgix.net/image/BrQidfK9jaQyIHwdw91aVpkPiib2/7SKDEvndWzq2KPSketg1.png?auto=format&w=845)
+
+### 编辑节点类型
+
+要编辑节点类型，请双击该类型，然后输入新类型。
+
+`1` 右键点击下面的**Hank**并选择**检查**
+
+- Dean
+- Hank
+- Thaddeus
+- Brock
+
+`2` 双击`<li>`节点，`li`文本将会高亮显示。
+
+`3` 删除`li`，输入`button`，然后回车。`<li>`节点将会变为`<button>`节点。
+
+![img](https://wd.imgix.net/image/BrQidfK9jaQyIHwdw91aVpkPiib2/nbdyNWefo9fqESvfWdha.png?auto=format&w=845)
+
+### 以HTML格式修改
+
+要使用HTML语法高亮和自动补全功能编辑节点，可在节点的下拉菜单中选择**以HTML格式修改**。
+
+`1` 右键点击下面的**Leonard**并选择**检查**。
+
+- Penny
+- Howard
+- Rajesh
+- Leonard
+
+`2`  在**元素**面板，右键点击当前节点，在下拉菜单中选择**以HTML格式修改**。
+
+![img](https://wd.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/2If7eY0I3aNpQcb1fAZg.png?auto=format&w=845)
+
+`3` 
+
+`4`
+
+`5`
 
 
 
 
-## 附录：HTML 与 DOM
 
-<span id="appendix">本节将会快速解释 HTML 和 DOM 之间的区别。</span>
+## <span id="appendix">附录：HTML 与 DOM</span>
+
+本节将会快速解释 HTML 和 DOM 之间的区别。
 
 当您用一个web浏览器请求一个网页（比如`https://example.com`），服务器会返回类似下方的HTML：
 
@@ -185,9 +269,9 @@ html
 
 查看 [Introduction to the DOM](https://developer.mozilla.org/docs/Web/API/Document_Object_Model/Introduction) 以了解更多。
 
-## 附录：滚动到视野范围内
+## <span id="scroll2">附录：滚动到视野范围内</span>
 
-<span id="scroll2">这是</span>[滚动到视野范围内](#scroll1)部分的延续。按照以下说明完成该部分。
+这是[滚动到视野范围内](#scroll1)部分的延续。按照以下说明完成该部分。
 
 `1` 在DOM树中，`<li>Magritte</li>`节点应该仍是被选中的。如果未被选中，请回到[滚动到视野范围内](#scroll1)并重新开始。
 
