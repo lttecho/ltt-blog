@@ -201,13 +201,161 @@ DevTools的元素面板就会被打开。`<li>Michelangelo</li>` 就会在DOM树
 
 ![img](https://wd.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/2If7eY0I3aNpQcb1fAZg.png?auto=format&w=845)
 
-`3` 
+`3`  回车来开始新的一行，并输入`<l`。DevTool 会为您突出显示 HTML 语法和自动补全标签。
 
-`4`
+![img](https://wd.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/B7kQKGGUGf3S2ERmF5dc.png?auto=format&w=845)
 
-`5`
+> 提示：DevTools 也可以自动完成 DOM 属性。
+
+`4` 从自动补全菜单项中选择`li`元素并输入`>`。DevTools 会自动在光标后添加结束 </li> 标记。
+
+`5` 在标签内键入 `Sheldon`，然后按 Control / Command + Enter 应用更改。
+
+![img](https://wd.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/unvKWSLDvzoh7kHZoWbK.png?auto=format&w=845)
+
+### 重新排序 DOM 节点
+
+拖动节点来重新排序。
+
+`1` 右键点击下面的**Elvis Presley**并选择**检查**。注意它是列表中的最后一项。
+
+- Stevie Wonder
+- Tom Waits
+- Chris Thile
+- Elvis Presley
+
+`2` 在DOM树中，拖拽`<li>Elvis Presley</li>`到列表的顶部。
+
+![img](https://wd.imgix.net/image/BrQidfK9jaQyIHwdw91aVpkPiib2/qD6OQFkcxcKkOZJxHlqB.png?auto=format&w=845)
+
+### 强制状态
+
+您可以强制节点保持在 :active、:hover、:focus、:visited 和 :focus-within 等状态。
+
+`1 ` 悬停在下面的**The Lord of the Flies**上。它的背景色会变为橙色。
+
+<ul><li class="demo--hover">The Lord of the Flies</li><li>Crime and Punishment</li><li>Moby Dick</li></ul>
+<style>
+    .demo--hover:hover {
+        background-color: orange;
+    }
+</style>
+
+`2` 右键点击上面的**The Lord of the Flies**，并选择**检查**。
+
+`3` 右键点击`<li class="demo--hover">The Lord of the Flies</li>`，选择**强制执行状态** > **:hover**。如果您没有看到对应的选项，请查看
+
+[附录：缺少选项](#options)。即使您实际上并未将鼠标悬停在节点上，背景颜色仍保持橙色。
 
 
+
+### 隐藏节点
+
+按H键可以隐藏节点。
+
+`1` 右键点击下面的**The Stars My Destination**并选择**检查**。
+
+- The Count of Monte Cristo
+- The Stars My Destination
+
+`2` 按下H键，该检点就会被隐藏。
+
+![img](https://wd.imgix.net/image/BrQidfK9jaQyIHwdw91aVpkPiib2/ynrZooiPHy2DUBbdGL3k.png?auto=format&w=845)
+
+`3` 再次按下H键，该节点又会出现。
+
+
+
+### 删除节点
+
+按下Delete键可以删除节点。
+
+`1` 右键点击下面的**Foundation**并选择**检查**。
+
+- The Illustrated Man
+- Through the Looking-Glass
+- Foundation
+
+`2` 按下Delete键，该节点就会被删除。
+
+`3` 按下Control+Z或者Command+Z (Mac)，上一次操作会被撤销，该节点会重现出现。
+
+
+
+## 在控制台访问节点
+
+DevTools 提供了一些快捷方式，用于从控制台访问 DOM 节点，或获取对它们的 JavaScript 引用。
+
+### 用 $0 引用当前选择的节点
+
+当您检查一个节点时，该节点旁边的 `== $0 `文本意味着您可以在控制台中使用变量` $0 `引用该节点。
+
+`1` 右键点击下面的**The Left Hand of Darkness**并选择**检查**。
+
+- The Left Hand of Darkness
+- Dune
+
+`2` 按下Escape键可打开控制台抽屉。
+
+`3` 输入`$0`并回车，表达式的结果显示` $0 `的计算结果为` <li>The Left Hand of Darkness</li>`。
+
+![img](https://wd.imgix.net/image/BrQidfK9jaQyIHwdw91aVpkPiib2/y3AQHZHbv25cRX1AJt4E.png?auto=format&w=845)
+
+`4` 将鼠标悬停在结果上，该节点在视口中高亮显示。
+
+`5` 在DOM树中点击`<li>Dune</li>`，在控制台中再次输入`$0`并回车。现在，`$0`就等于`<li>Dune</li>`。
+
+![img](https://wd.imgix.net/image/BrQidfK9jaQyIHwdw91aVpkPiib2/AJpUgl9zL9w4skXkaDEE.png?auto=format&w=845)
+
+### 存储为全局变量
+
+如果需要多次引用某个节点，请将其存储为全局变量。
+
+`1` 右键点击下面的**The Big Sleep**并选择**检查**。
+
+- The Big Sleep
+- The Long Goodbye
+
+`2` 右键点击DOM树中的`<li>The Big Sleep</li>`，并选择**存储为全局变量**。如果您没有看到对应的选项，请查看
+
+[附录：缺少选项](#options)。
+
+`3` 在控制台输入`temp1`并回车。表达式的结果显示变量计算为节点。
+
+![img](https://wd.imgix.net/image/BrQidfK9jaQyIHwdw91aVpkPiib2/hDCScCM1db0EnAM0VYAZ.png?auto=format&w=845)
+
+
+
+### 复制JS路径
+
+当您需要在自动化测试中引用它时，将 JavaScript 路径复制到节点。
+
+`1` 右键点击下面的**The Brothers Karamazov**并选择**检查**。
+
+- The Brothers Karamazov
+- Crime and Punishment
+
+`2 ` 在DOM树中右键点击`<li>The Brothers Karamazov</li>`并选择**复制** > **复制JS路径**。一条解析为节点的 `document.querySelector() `表达式已复制到剪贴板。
+
+`3` 按下Control+V或者Command+V (Mac) 可在控制台粘贴该表达式。
+
+`4 ` 按下回车可执行这条表达式。
+
+![img](https://wd.imgix.net/image/BrQidfK9jaQyIHwdw91aVpkPiib2/r2zpHdCY7TQ0mMzRg3Ov.png?auto=format&w=845)
+
+## 在 DOM 更改时中断
+
+DevTools 允许您在 JavaScript 修改 DOM 时暂停页面的 JavaScript。请参阅 DOM 更改断点。
+
+
+
+## 下一步
+
+本文已经涵盖了 DevTools 中大多数与 DOM 相关的功能。您可以通过右键单击 DOM 树中的节点并尝试本教程中未涵盖的其他选项来发现它们的其余部分。也可以查看[元素面板快捷键](/devtools/keyboard-shortcuts#元素面板的快捷键)。
+
+查看[Chrome DevTools主页](https://developer.chrome.com/docs/devtools/)，了解您可以使用 DevTools 做的所有其他事情。
+
+如果您想联系 DevTools 团队或从 DevTools 社区获得帮助，请参阅[社区](/devtools/overview#社区)。
 
 
 
