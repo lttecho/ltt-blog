@@ -4,11 +4,11 @@
   "description": "some notes",
   "main": "index.js",
   "scripts": {
-    "start": "npm run dev",
-    "dev": "npm run dumi dev --port=8070",
+    "start": "yarn run dev",
+    "dev": "yarn run dumi dev --port=8070",
     "lint:md": "node lint-md *.md",
     "lint:fix": "node lint-md *.md --fix",
-    "build": "npm run dumi build"
+    "build": "yarn run dumi build"
   },
   "repository": {
     "type": "git",
