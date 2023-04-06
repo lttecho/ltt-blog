@@ -26,5 +26,6 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          branch: gh-pages
+          PERSONAL_TOKEN: ${{ secrets.DEPLOY_KEY }}
+          publish_branch: gh-pages
           publish_dir: ./dist
