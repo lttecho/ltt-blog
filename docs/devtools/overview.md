@@ -34,7 +34,7 @@ Chrome DevTools是直接内置在[Google Chrome](https://www.google.com/chrome/)
 
 如果您是一位经验更丰富的Web开发者，可以从以下几个着手点来学习如何使用DevTools提高生产力：
 
-- [查看和更改DOM](/devtools/start-with-view-and-change-dom)
+- [查看和更改DOM](/devtools/dom-view)
 - [查看和更改页面的样式（CSS）](/devtools/view-and-change-css)
 - [调试JavaScript](/devtools/debug-javascript)
 - [在控制台中查看消息并运行JavaScript](/devtools/console-overview)

@@ -9,29 +9,21 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Ready to build  and deploy 🤓
-        uses: fifsky/dingtalk-action@master
+      # 拉代码
+      - name: Checkout code
+        uses: actions/checkout@v2
+      # 下载node
+      - name: Use Node.js
+        uses: actions/setup-node@v1
         with:
-          type: text
-          content: Github：Blog 构建开始
-      - name: Checkout 🛎️
-        uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
-        with:
-          persist-credentials: false
+          node-version: 16.x
       - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
         run: |
-          yarn install
-          yarn run dumi build
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+          npm install
+          npm run dumi build
+      # 部署到github
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.0.0
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: dist # The folder the action should deploy.
-          CLEAN: true
-      - name: Complete ✅
-        uses: fifsky/dingtalk-action@master
-        with:
-          url: ${{ secrets.DINGTALK_WEBHOOK }}
-          type: text
-          content: Github：Blog 构建完成
+          branch: gh-pages
+          folder: dist
