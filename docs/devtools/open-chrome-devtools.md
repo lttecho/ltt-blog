@@ -1,6 +1,6 @@
 ---
 nav:
-  title: Chrome Devtools
+  title: Chrome Devtools中文文档
   order: 1
 group:
   title: 打开Chrome DevTools
