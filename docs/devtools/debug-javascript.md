@@ -76,34 +76,104 @@ function updateLabel() {
 
 `console.log()` 方法可以完成调试工作，但**断点**可以更快地完成。断点可让您在代码执行过程中暂停代码，并及时检查该时刻的所有值。与` console.log()` 方法相比，断点有几个优点：
 
-- 使用`console.log()`，需要手动打开源代码，找到相关代码，插入`console.log()`语句，然后重新加载页面，才能在Console中看到消息。使用断点，您甚至可以在不知道代码结构的情况下暂停相关代码。
+- 使用`console.log()`，需要手动打开源代码，找到相关代码，插入`console.log()`语句，然后重新加载页面，才能在控制台中看到消息。使用断点，您甚至可以在不知道代码结构的情况下暂停相关代码。
 - 在您的 `console.log() `语句中，您需要明确指定要检查的每个值。通过断点，DevTools 会及时向您显示所有变量在该时刻的值。有时，有些变量会影响您的代码，您甚至都没有意识到。
 
+简而言之，断点可以帮助您比` console.log()` 方法更快地查找和修复错误。
+
+如果您后退一步并考虑该应用程序的工作原理，您可以做出有根据的猜测，即在与**Add Number 1 and Number 2** 按钮相关联的点击事件侦听器中计算出不正确的总和 (`5 + 1 = 51`)。因此，您可能希望在点击侦听器执行时暂停代码。**事件监听断点**可以让您做到下面：
+
+`1` 在**JavaScript调试**窗格中，点击**事件监听断点**展开该部分。DevTools 显示了一个可扩展事件类别列表，例如**动画**和**剪贴板**。
+
+`2` 在**鼠标**事件类别旁边，点击**展开** ![img](https://wd.imgix.net/image/BrQidfK9jaQyIHwdw91aVpkPiib2/aRiQWVlQJQz6Mbv1RMag.png?auto=format&w=14)。DevTools 显示鼠标事件列表，例如**单击**和**鼠标**按下。每个事件旁边都有一个复选框。
+
+`3` 检查**点击**复选框。DevTools 现在设置为在执行任何`单击`事件侦听器时自动暂停。
+
+![img](https://wd.imgix.net/image/admin/j7toLd0kyGNvBJtMhRHS.png?auto=format&w=845)
+
+`4` 回到Demo，再次点击 **Add Number 1 and Number 2**按钮。DevTools 暂停执行并在 **源代码**面板中突出显示一行代码。
+
+DevTools应该暂停在下面这行代码：
+
+```js
+function onClick() {
+```
+
+如果您的代码暂停的不是这一行，一直按**恢复脚本执行** ![img](https://wd.imgix.net/image/BrQidfK9jaQyIHwdw91aVpkPiib2/lk63wTlzwXWuRIdSsKP4.png?auto=format&w=26)直到暂停在这一行。
+
+> 注意：
+
+**事件侦听器断点**只是 DevTools 中可用的多种断点类型之一。记住所有不同类型的断点是很值得的，因为每种类型最终都会帮助您尽快调试不同的场景。请参阅 [Pause Your Code With Breakpoints](https://developer.chrome.com/docs/devtools/javascript/breakpoints/) 以了解何时以及如何使用每种类型。
 
 
-## 第四步
+
+## 第四步：逐步执行代码
+
+造成bug的一个常见原因是脚本按照错误的顺序执行了。单步执行代码使您能够逐行执行代码，一次一行，并准确找出代码执行顺序与预期不同的位置。现在就试试：
+
+`1` 在DevTools的**源代码**面板中，点击**进入下一个函数调用**![img](https://wd.imgix.net/image/admin/uQ1yacZ8AMGI0EFMxT05.png?auto=format&w=18)单步执行`onClick()`函数，一次一行。DevTools会在下面这行高亮：
+
+```js
+if (inputsAreEmpty()) {
+```
+
+`2` 点击**跳过下一个函数调用**![img](https://wd.imgix.net/image/BrQidfK9jaQyIHwdw91aVpkPiib2/KMlE5HW4DU3PRgYEHny9.png?auto=format&w=36)。DevTools会执行`inputsAreEmpty()`而不进入它。请注意DevTools跳过了几行代码。这是因为`inputsAreEmpty()`的结果为false，所以`if`语句的代码块没有被执行。
+
+这是单步调试代码的基本思路。如果您查看`get-started.js`中的代码，您会发现错误可能出在`updateLabel()`函数中。您也可以使用另一种类型的断点来暂停代码，使其更接近错误的可能位置，而不是单步执行每一行代码。
 
 
 
-## 第五步：
+## 第五步：设置代码行断点
+
+代码行断点是最常见的断点类型。当您有要暂停的特定代码行时，请使用代码行断点：
+
+`1` 定位到`updateLabel()`种的最后一行代码：
+
+```js
+label.textContent = addend1 + ' + ' + addend2 + ' = ' + sum;
+```
+
+`2` 在代码的左侧，您可以看到该特性代码行的行号，即`32`。单击`32`，DevTools 会在` 32` 的顶部放置了一个蓝色图标。这意味着在这一行有一个代码行断点。DevTools 现在总是在执行这行代码之前暂停。
+
+`3` 点击**恢复脚本执行**![img](https://wd.imgix.net/image/BrQidfK9jaQyIHwdw91aVpkPiib2/lk63wTlzwXWuRIdSsKP4.png?auto=format&w=26)。脚本继续执行到第 32 行。在第 29、30 和 31 行，DevTools 在它们的声明旁边显示了 addend1、addend2 和 sum inline 的值。
+
+![img](https://wd.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/dDtaoDZ2a8F7mFkhLp9U.png?auto=format&w=845)
+
+在这个例子中，DevTools暂停在了32行代码上。
 
 
 
-## 第六步：
+## 第六步：检查变量值
 
-### 方法一：
+`addend1`、`addend2` 和 `sum` 的值看起来很可疑。它们用引号引起来，这意味着它们是字符串。这是解释错误原因的一个很好的假设。现在是收集更多信息的时候了。DevTools 提供了许多用于检查变量值的工具。
 
+### 方法一：作用域窗格
 
+当您暂停在某一行代码上时，**作用域**窗格会显示当前定义的局部变量和全局变量，以及每个变量的值。如果有闭包，还会显示闭包的值。双击一个变量的值可以编辑它。当您没有在代码行上暂停时，**作用域**窗格是空的。
 
-
-
-### 方法二：
-
-
+![img](https://wd.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/7Pjgz6fXsYWZB9GLjATQ.png?auto=format&w=845)
 
 
 
-### 方法三：
+### 方法二：监视表达式
+
+**监视表达式**选项卡可以让您随时间监控所有变量的值。顾名思义，监视表达式不局限于变量。您可以在监视表达式中存储任何有效的JavaScript表达式。现在就试试：
+
+`1` 点击**监视**选项卡。
+
+`2` 点击**添加表达式**![img](https://wd.imgix.net/image/admin/IYPLvXHyMtjVBILENOIL.png?auto=format&w=20)
+
+`3` 输入`typeof sum`。
+
+`4` 回车。DevTools会显示`typeof sum: "string"`。冒号右侧的值是您的监视表达式的结果。
+
+![img](https://wd.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/srnzLyxWyeSvCA2Bjqzt.png?auto=format&w=845)
+
+
+
+
+
+### 方法三：控制台
 
 
 
