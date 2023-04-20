@@ -103,7 +103,7 @@ function onClick() {
 
 > 注意：
 
-**事件侦听器断点**只是 DevTools 中可用的多种断点类型之一。记住所有不同类型的断点是很值得的，因为每种类型最终都会帮助您尽快调试不同的场景。请参阅 [Pause Your Code With Breakpoints](https://developer.chrome.com/docs/devtools/javascript/breakpoints/) 以了解何时以及如何使用每种类型。
+**事件侦听器断点**只是 DevTools 中可用的多种断点类型之一。记住所有不同类型的断点是很值得的，因为每种类型最终都会帮助您尽快调试不同的场景。请参阅 [使用断点暂停您的代码](/devtools/breakpoints) 以了解何时以及如何使用每种类型。
 
 
 
@@ -175,14 +175,55 @@ label.textContent = addend1 + ' + ' + addend2 + ' = ' + sum;
 
 ### 方法三：控制台
 
+除了查看`console.log()`消息外，您还可以使用控制台评估任意JavaScript语句。在调试方面，您可以使用控制台来测试潜在的错误修复。现在就试试：
+
+`1` 如果您没有打开控制台抽屉，请按 Escape 将其打开。它会在您的 DevTools 窗口底部打开。
+
+`2` 在控制台中，输入`parseInt(addend1) + parseInt(addend2)`。此语句有效，因为您暂停在 `addend1` 和 `addend2` 在范围内的代码行上。
+
+`3` 回车。DevTools 评估该语句并打印出 6，这是您希望演示产生的结果。
+
+![img](https://wd.imgix.net/image/NJdAV9UgKuN8AhoaPBquL7giZQo1/KrpBYhxN1iEfKul9qMUV.png?auto=format&w=845)
+
+上面的屏幕截图显示了计算` parseInt(addend1) + parseInt(addend2) `后的控制台抽屉。
 
 
 
+## 第七步：应用修复
 
+您已找到该错误的修复方法。剩下的就是通过编辑代码并重新运行来尝试您的修复。您无需离开DevTools就可以尝试应用您的修复方法。您可以直接在 DevTools UI 中编辑 JavaScript 代码。现在就试试：
 
+`1` 点击**恢复脚本执行**![img](https://wd.imgix.net/image/BrQidfK9jaQyIHwdw91aVpkPiib2/lk63wTlzwXWuRIdSsKP4.png?auto=format&w=26)
 
-## 第七步：
+`2` 在**代码编辑器**中，将第31行的`var sum = addend1 + addend2`替换为`var sum = parseInt(addend1) + parseInt(addend2)`。
+
+`3` 按下Command + S (Mac)或者Control + S (Windows, Linux) 保存您的修改。
+
+`4`  点击**取消断点**![img](https://wd.imgix.net/image/BrQidfK9jaQyIHwdw91aVpkPiib2/WTW7ZmEWJsBaeMrmXRJn.png?auto=format&w=19)。它的颜色变为蓝色表示它处于活动状态。设置后，DevTools 会忽略您设置的任何断点。
+
+`5` 尝试使用不同的值去运行。现在程序可以正确计算了。
+
+```
+警告
+此工作流仅对浏览器中运行的代码应用修复。它不会为访问您页面的所有用户修复代码。为此，您需要修复服务器上的代码。但是，您可以在 DevTools 中编辑文件并使用 Workspaces 将它们保存到您的源中。
+```
+
+> 重要
+>
+> 从 Chrome 版本 105 开始，您可以实时编辑暂停的功能。
 
 
 
 ## 下一步
+
+恭喜！您现在知道如何在调试 JavaScript 时充分利用 Chrome DevTools。您在本教程中学到的工具和方法可以为您节省无数时间。
+
+本教程只向您展示了两种设置断点的方法。DevTools 提供了许多其他方式，包括：
+
+- 条件断点仅在您提供的条件为真时触发。
+- 捕获或未捕获异常的断点。
+- 当请求的 URL 与您提供的子字符串匹配时触发的 XHR 断点。
+
+请参阅使用断点暂停代码以了解何时以及如何使用每种类型。
+
+本教程没有解释一些单步调试的方法。请参阅单步执行代码行以了解更多信息。
